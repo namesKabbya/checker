@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Subscriber Access</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    #box {
+      background: #2a2a2a;
+      padding: 30px;
+      width: 350px;
+      margin: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box">
+  <h2>Enter Access Password</h2>
+  <p>This content is for YouTube Subscribers Only</p>
+
+  <input type="password" id="pass" placeholder="Enter password">
+  <button onclick="checkPass()">Enter</button>
+
+  <p id="msg" style="color:red; margin-top:10px;"></p>
+</div>
+
+<script>
+  function checkPass() {
+    const correct = "subscribe_only_access2025";
+    const input = document.getElementById("pass").value;
+
+    if (input === correct) {
+      window.location.href = "content.html";
+    } else {
+      document.getElementById("msg").innerText = "Wrong password.";
+    }
+  }
+</script>
+
+</body>
+</html>
